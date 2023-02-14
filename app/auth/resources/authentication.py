@@ -19,7 +19,7 @@ def authentication():
         pw = request.form['pw']
         
         encrip = hashlib.sha256(pw.encode()).digest()
-        encrip = pw #TODO: Borrar, para que encripte
+        #encrip = pw #TODO: Borrar, para que encripte
         
         data = list(db['users'].find({"$and":[{"user":user}, {"password": encrip}]}))
 
