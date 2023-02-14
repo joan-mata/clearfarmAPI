@@ -1,0 +1,39 @@
+{% extends "base_template.html" %}
+
+{% block title %}Search{% endblock %}
+
+{% block content %}
+<div class="login">
+<form method="post" action="/userExist">
+    <p>
+        <b>User: </b>
+        <input type="text" name="user" placeholder="User"></input>
+    </p>
+    <p>
+        <b>Password: </b>
+        <input type="password" name="pw" placeholder="Password"></input>
+    </p>
+    <p>
+        <b>Confirm password: </b>
+        <input type="password" name="confirm" placeholder="Confirm password"></input>
+    </p>
+    
+    Select user's rol:
+    
+    <p>
+        <input type="radio" id="admin" name="rol" value="admin"> <label>
+            Admin </label>
+    </p>
+    <p>
+        <input type="radio" id="farmer" name="rol" value="farmer" checked> <label> Farmer </input>
+    </p>
+    <p>
+        <input type="radio" id="compute" name="rol" value="compute"> <label> Compute </input>
+    </p>
+    
+       
+    <button type="submit">Sign Up</button>
+
+</form>
+</div>
+{% endblock %}

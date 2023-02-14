@@ -1,0 +1,26 @@
+{% extends "base_template.html" %}
+
+{% block title %}Searches{% endblock %}
+
+{% block content %}
+
+<div class="Search">
+    <form method="post">
+        
+        <p>
+            <b> What do you search? </b>
+        </p>
+        <p>
+            <input type="radio" id="cow" name="searches" value="cow" checked> <label>
+                Search Cow</label>
+        </p>
+        <p>
+            <input type="radio" id="other" name="searches" value="other"> <label>
+                Search OTHER</label>
+        </p>
+
+        <button type="submit">POST</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+[
+    {
+        "_id": {
+            "$oid": "6376564a5b74188af480e495"
+        },
+        "date_insert_in_db": "2022-11-17",
+        "cowID": "42319",
+        "farmID": "158",
+        "epochStart": "1614816000",
+        "epochEnd": "1614902400",
+        "standing": "39769.63",
+        "laying": "38677.32",
+        "walking": "7975.05",
+        "ruminating": "32177.22",
+        "eating": "16619.02",
+        "other": "37633.16"
+    }
+]

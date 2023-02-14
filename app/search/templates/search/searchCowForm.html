@@ -1,0 +1,37 @@
+{% extends "base_template.html" %}
+
+{% block title %}Search Cow{% endblock %}
+
+{% block content %}
+
+<div class="postClass">
+    <form method="post" action="/searchCowData">
+
+        <p>
+            <b> Search Cow </b>
+        </p>
+        <label for="farmID">Farm ID: </label>
+        <input type="text" id="farmID" name="farmID" required><br>
+        <label for="cowNum">Cow Number: </label>
+        <input type="text" id="cowNum" name="cowNum"><br><br>
+        
+        <label for="ID">Cow ID name: </label><br>
+        <input type="radio" name="ID" value="cowID" checked> <label> CowID </label><br>
+        <input type="radio" name="ID" value="cowTag"> <label> CowTag </label><br>
+        <input type="radio" name="ID" value="official_cowID"> <label> official_cowID </label><br><br>
+        
+        <label for="quantity">Quantity of information: </label><br>
+        <input type="radio" name="quantity" value="Last" checked> <label> Last </label><br>
+        <input type="radio" name="quantity" value="All"> <label> All </label><br><br>
+            
+        <label for="timeFrom">Date from: </label>
+        <input type="date" name="timeFrom">
+        
+        <label for="timeTo"> to: </label>
+        <input type="date" name="timeTo"><br><br>
+
+        <button type="submit">POST</button>
+    </form>
+</div>
+
+{% endblock %}

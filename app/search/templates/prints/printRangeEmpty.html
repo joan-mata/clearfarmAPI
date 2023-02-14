@@ -1,0 +1,17 @@
+{% extends "base_template.html" %}
+
+{% block title %}Print Range Empty{% endblock %}
+
+{% block content %}
+
+<div class="printRangeEmpty">
+
+    <p> There is no information in this date range.<p>
+    <p> Please try other dates <p><br>
+
+    <form action="/searchCowForm">
+        <button type="submit">Return to Form</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,122 @@
+{
+    "1": {
+        "cowID": "43046",
+        "farmID": "159",
+        "epochStart": "1614816000",
+        "epochEnd": "1614902400",
+        "standing": "28407.55",
+        "laying": "43594.22",
+        "walking": "14458.9",
+        "ruminating": "30474.55",
+        "eating": "17508.76",
+        "other": "38672.29"
+    },
+    "2": {
+        "cowID": "43363",
+        "farmID": "159",
+        "epochStart": "1614816000",
+        "epochEnd": "1614902400",
+        "standing": "42943.36",
+        "laying": "36189.78",
+        "walking": "7260.85",
+        "ruminating": "26241.8",
+        "eating": "23111.3",
+        "other": "37034.33"
+    },
+    "3": {
+        "cowID": "43354",
+        "farmID": "159",
+        "epochStart": "1614816000",
+        "epochEnd": "1614902400",
+        "standing": "28309.27",
+        "laying": "43337.82",
+        "walking": "14728.55",
+        "ruminating": "29762.38",
+        "eating": "13431.31",
+        "other": "43183.35"
+    },
+    "4": {
+        "cowID": "43370",
+        "farmID": "159",
+        "epochStart": "1614816000",
+        "epochEnd": "1614902400",
+        "standing": "27601.09",
+        "laying": "39052.3",
+        "walking": "19795.95",
+        "ruminating": "26699.32",
+        "eating": "12547.39",
+        "other": "47203.68"
+    },
+    "5": {
+        "cowID": "43360",
+        "farmID": "159",
+        "epochStart": "1614816000",
+        "epochEnd": "1614902400",
+        "standing": "34338.04",
+        "laying": "34262.17",
+        "walking": "17823.15",
+        "ruminating": "21597.59",
+        "eating": "14067.06",
+        "other": "50757.5"
+    },
+    "6": {
+        "cowID": "43356",
+        "farmID": "159",
+        "epochStart": "1614816000",
+        "epochEnd": "1614902400",
+        "standing": "29621.78",
+        "laying": "43258.64",
+        "walking": "13462.06",
+        "ruminating": "29884.46",
+        "eating": "14817.92",
+        "other": "41584.93"
+    },
+    "7": {
+        "cowID": "42351",
+        "farmID": "158",
+        "epochStart": "1614816000",
+        "epochEnd": "1614902400",
+        "standing": "34987.96",
+        "laying": "39029.07",
+        "walking": "12520.09",
+        "ruminating": "33570.94",
+        "eating": "17628.79",
+        "other": "35329.86"
+    },
+    "8": {
+        "cowID": "44333",
+        "farmID": "158",
+        "epochStart": "1614816000",
+        "epochEnd": "1614902400",
+        "standing": "48481.03",
+        "laying": "32032.42",
+        "walking": "5862.88",
+        "ruminating": "30191.27",
+        "eating": "28961.16",
+        "other": "27242.42"
+    },
+    "9": {
+        "cowID": "42350",
+        "farmID": "158",
+        "epochStart": "1614816000",
+        "epochEnd": "1614902400",
+        "standing": "42831.83",
+        "laying": "30503.86",
+        "walking": "13042.57",
+        "ruminating": "29135.04",
+        "eating": "19108.71",
+        "other": "38115.33"
+    },
+    "10": {
+        "cowID": "42319",
+        "farmID": "158",
+        "epochStart": "1614816000",
+        "epochEnd": "1614902400",
+        "standing": "39769.63",
+        "laying": "38677.32",
+        "walking": "7975.05",
+        "ruminating": "32177.22",
+        "eating": "16619.02",
+        "other": "37633.16"
+    }
+}

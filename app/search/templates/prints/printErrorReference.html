@@ -1,0 +1,18 @@
+{% extends "base_template.html" %}
+
+{% block title %}Print Error{% endblock %}
+
+{% block content %}
+
+<div class="printError">
+    
+    <p> Please, it's possible that you have not correctly selected the "Cow ID name" <p>
+    <tr>
+        <td> {{ data }}</td><br>
+    <tr>
+    <form action="/searchCowForm">
+            <button type="submit">Return to Form</button>
+    </form>
+</div>
+
+{% endblock %}

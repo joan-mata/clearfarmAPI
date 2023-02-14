@@ -1,0 +1,26 @@
+{% extends "base_template.html" %}
+
+{% block title %}Print Range Cow{% endblock %}
+
+{% block content %}
+
+<div class="printRangeCow">
+    <br>
+    {% if flag: %}
+    <form action="/downloadJSON">
+        <button href="{{url_for('search.downloadJSON')}}" type="submit">Download JSON</button>
+    </form>
+    <form action="/downloadCSV">
+        <button href="{{url_for('search.downloadJSON')}}" type="submit">Download CSV</button>
+    </form>
+    {% endif %}
+    
+    <p> The information about the Cow between a range of date<p>
+    <tr>
+        {% for line in data: %}
+            <td> {{ line }}</td><br>
+        {% endfor %}
+    <tr>
+</div>
+
+{% endblock %}

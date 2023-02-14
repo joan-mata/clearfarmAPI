@@ -1,0 +1,20 @@
+{% extends "base_template.html" %}
+
+{% block title %}Search{% endblock %}
+
+{% block content %}
+<div class="login">
+<form method="post" action="/authentication">
+    <p>
+        <b>User: </b>
+        <input type="text" name="user" placeholder="User"></input>
+    </p>
+    <p>
+        <b>Password: </b>
+        <input type="password" name="pw" placeholder="Password"></input>
+    </p>
+    <button type="submit">Submit</button>
+
+</form>
+</div>
+{% endblock %}

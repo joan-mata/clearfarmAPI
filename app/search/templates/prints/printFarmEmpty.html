@@ -1,0 +1,17 @@
+{% extends "base_template.html" %}
+
+{% block title %}Print Farm Empty{% endblock %}
+
+{% block content %}
+
+<div class="printFarmEmpty">
+
+    <p> There is no information in this farm.<p>
+    <p> Please try other farmID <p><br>
+
+    <form action="/searchCowForm">
+            <button type="submit">Return to Form</button>
+    </form>
+</div>
+
+{% endblock %}

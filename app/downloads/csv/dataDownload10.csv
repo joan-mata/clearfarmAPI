@@ -1,0 +1,2 @@
+,date_insert_in_db,cowID,farmID,epochStart,epochEnd,standing,laying,walking,ruminating,eating,other,_id.$oid
+0,2022-11-17,43354,159,1614816000,1614902400,28309.27,43337.82,14728.55,29762.38,13431.31,43183.35,6376558088d3208cb4df9603

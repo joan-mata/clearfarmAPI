@@ -1,0 +1,26 @@
+{% extends "base_template.html" %}
+
+{% block title %}Clearfarm{% endblock %}
+
+{% block content %}
+
+<div class="postClass">
+    <form method="post">
+
+        <p>
+            <b> What do you do? </b>
+        </p>
+        <p>
+            <input type="radio" id="search" name="action" value="search" checked> <label>
+                Search in DB</label>
+        </p>
+        <p>
+            <input type="radio" id="insert" name="action" value="insert"> <label>
+                Insert data in DB</label>
+        </p>
+
+        <button type="submit">POST</button>
+    </form>
+</div>
+
+{% endblock %}

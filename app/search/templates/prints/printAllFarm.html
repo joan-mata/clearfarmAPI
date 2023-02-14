@@ -1,0 +1,28 @@
+{% extends "base_template.html" %}
+
+{% block title %}Print All Farm{% endblock %}
+
+{% block content %}
+
+<div class="printAllFarm">
+    <br>
+    {% if flag: %}
+    <form action="/downloadJSON">
+        <button href="{{url_for('search.downloadJSON')}}" type="submit">Download JSON</button>
+    </form>
+    <form action="/downloadCSV">
+        <button href="{{url_for('search.downloadJSON')}}" type="submit">Download CSV</button>
+    </form>
+    {% endif %}
+    
+    <p> All information about Farm <p>
+    <tr>
+        {% for enterprise in data: %}
+            {% for line in enterprise: %}
+            <td> {{ line }}</td><br>
+            {% endfor %}
+        {% endfor %}
+    <tr>
+</div>
+
+{% endblock %}

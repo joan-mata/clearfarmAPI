@@ -1,0 +1,22 @@
+{% extends "base_template.html" %}
+
+{% block title %}Compute Rol{% endblock %}
+
+{% block content %}
+
+<div class="election">
+    
+    <form method="post" action="/resElection">
+
+        <p>
+            <b> What do you want donwload the next data? </b>
+        </p>
+
+        <input type="radio" name="res" value="Yes" checked> <label> Yes </label><br>
+        <input type="radio" name="res" value="No"> <label> No </label><br><br>
+
+        <button type="submit">POST</button>
+    </form>
+</div>
+
+{% endblock %}

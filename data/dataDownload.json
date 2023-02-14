@@ -1,0 +1,1 @@
+[{"_id": {"$oid": "6376564a5b74188af480e491"}, "date_insert_in_db": "2022-11-17", "cowID": "43356", "farmID": "159", "epochStart": "1614816000", "epochEnd": "1614902400", "standing": "29621.78", "laying": "43258.64", "walking": "13462.06", "ruminating": "29884.46", "eating": "14817.92", "other": "41584.93"}]
