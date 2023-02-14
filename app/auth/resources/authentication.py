@@ -31,10 +31,10 @@ def authentication():
             return redirect(url_for('home.home'))
         else:
             #BORRAR
-            session['user'] = user
-            session['rol'] = "superadmin"
-            return redirect(url_for('home.home'))
-            #return "User or password not correct"
+            #session['user'] = user
+            #session['rol'] = "superadmin"
+            #return redirect(url_for('home.home'))
+            return "User or password not correct"
             
     else:
         return "Not allow"
