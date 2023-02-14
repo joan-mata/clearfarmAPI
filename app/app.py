@@ -36,5 +36,3 @@ def create_app():
         
     return app
 
-if __name__ == '__main__':
-    app.run(host='52.188.228.36',port=80)
