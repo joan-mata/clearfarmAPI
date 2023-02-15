@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, url_for, redirect, session
 import hashlib
 
 from .. import auth_bp
-from app import db
+from app import db_users
 
 @auth_bp.route('/authentication', methods=['POST'])
 def authentication():
@@ -21,7 +21,7 @@ def authentication():
         encrip = hashlib.sha256(pw.encode()).digest()
         #encrip = pw #TODO: Borrar, para que encripte
         
-        data = list(db['users'].find({"$and":[{"user":user}, {"password": encrip}]}))
+        data = list(db_users['admins'].find({"$and":[{"user":user}, {"password": encrip}]}))
 
         if data:
             flag = data[0]

@@ -2,14 +2,13 @@ from flask import Flask, session
 from pymongo import MongoClient
 
 client = MongoClient('localhost', 27017)
-db_users = client.users
+#db_users = client.users
 
-#db = client["cows"] #real cows
-db = client["tests"] #pruebas
-#UPLOAD_FOLDER = '/Users/joanmataparraga/Downloads'
-#UPLOAD_FOLDER = '/Users/joanmataparraga/Library/Mobile Documents/com~apple~CloudDocs/Trabajo/UAB/FarmWork/clearfarm/data'
+db_cows = client["cows"] #real cows
+db_pigs = client["pigs"] #real pigs
+db_users = client["users"] #real users
 
-UPLOAD_FOLDER = '/home/joanmata/clearfarm/data'
+UPLOAD_FOLDER = '/home/azureuser/clearfarmAPI/data'
 
 
 def create_app():
