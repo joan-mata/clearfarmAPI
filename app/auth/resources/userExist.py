@@ -20,9 +20,9 @@ def userExist():
             dict = {'user': user, 'password': encrip, 'rol': rol}
             data = [dict]
             
-            if rol = "farmer_cows" :
+            if rol == "farmer_cows" :
                 db_users['cows'].insert_many(data)
-            elif rol = "farmer_pigs" :
+            elif rol == "farmer_pigs" :
                 db_users['pigs'].insert_many(data)
             else:
                 db_users['admin'].insert_many(data)
