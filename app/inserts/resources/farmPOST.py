@@ -37,8 +37,8 @@ def farmPOST():
             #add date from today
             date = datetime.today().strftime('%Y-%m-%d')
             dict = {'date_insert_in_db': date}
-            hashPrevious = recoveryPreviousHash.recoveryPreviousHash(db_cows[enterprise])
-            #hashPrevious = {'hash_previous': '0'} #DELETE
+            #hashPrevious = recoveryPreviousHash.recoveryPreviousHash(db_cows[enterprise])
+            hashPrevious = {'hash_previous': '0'} #DELETE
 
             for rows in csvReader:
                 key = {}

@@ -7,6 +7,7 @@ client = MongoClient('localhost', 27017)
 db = "null"
 
 db_cows = client["tests"]
+#db_pigs = client["cows"] #real cows
 db_pigs = client["pigs"] #real pigs
 db_users = client["users"] #real users
 
