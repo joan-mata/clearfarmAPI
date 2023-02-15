@@ -15,10 +15,18 @@ def userExist():
             #TODO: confirmar que no existe en la db
             encrip = hashlib.sha256(pw.encode()).digest()
             user = request.form['user']
-            rol = request.form['rol']
+            #rol = request.form['rol']
+            rol = "superadmin"
             dict = {'user': user, 'password': encrip, 'rol': rol}
             data = [dict]
-            db['admin'].insert_many(data)
+            
+            if rol = "farmer_cows" :
+                db_users['cows'].insert_many(data)
+            elif rol = "farmer_pigs" :
+                db_users['pigs'].insert_many(data)
+            else:
+                db_users['admin'].insert_many(data)
+                
             return redirect(url_for('home.home'))
         else:
             return redirect(url_for('auth.signup'))
