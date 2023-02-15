@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, url_for, redirect, session
 import hashlib
 
 from .. import auth_bp
-from app import db
+from app import db_users
 
 @auth_bp.route('/userExist', methods=['POST'])
 def userExist():
@@ -18,7 +18,7 @@ def userExist():
             rol = request.form['rol']
             dict = {'user': user, 'password': encrip, 'rol': rol}
             data = [dict]
-            db['users'].insert_many(data)
+            db['admin'].insert_many(data)
             return redirect(url_for('home.home'))
         else:
             return redirect(url_for('auth.signup'))

@@ -21,7 +21,7 @@ def authentication():
         encrip = hashlib.sha256(pw.encode()).digest()
         #encrip = pw #TODO: Borrar, para que encripte
         
-        data = list(db_users['admins'].find({"$and":[{"user":user}, {"password": encrip}]}))
+        data = list(db_users['admin'].find({"$and":[{"user":user}, {"password": encrip}]}))
 
         if data:
             flag = data[0]
