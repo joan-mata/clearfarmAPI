@@ -17,11 +17,13 @@ def recoveryForm():
                     
     if animals == "cows":
         db = db_cows
+        processEnterpriseResults.processEnterpriseResults(db, enterprise, key)
+
     elif animals == "pigs":
         db = db_pigs
+        processEnterpriseResults.processEnterpriseResults(db, enterprise, key)
+
     else:
         db = "error"
-    
-    processEnterpriseResults.processEnterpriseResults(enterprise, key)
-    
+        
     return enterprise, db

@@ -8,7 +8,7 @@ import os
 
 from .. import inserts_bp
 
-def processEnterpriseResults(enterprise, key):
+def processEnterpriseResults(db, enterprise, key):
     try: # If exist this enterprise
         db['listCollections'].count_documents({"collection": enterprise})
     except: # If not exist this enterprise
