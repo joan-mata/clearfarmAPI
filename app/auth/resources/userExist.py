@@ -13,10 +13,11 @@ def userExist():
             
         if pw == confirm:
             #TODO: confirmar que no existe en la db
+            
             encrip = hashlib.sha256(pw.encode()).digest()
             user = request.form['user']
-            #rol = request.form['rol']
-            rol = "superadmin"
+            rol = request.form['rol']
+            
             dict = {'user': user, 'password': encrip, 'rol': rol}
             data = [dict]
             
