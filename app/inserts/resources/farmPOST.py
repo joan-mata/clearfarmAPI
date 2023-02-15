@@ -7,9 +7,11 @@ import json
 import os
 
 from .. import inserts_bp
-from app import db_cows, UPLOAD_FOLDER
+from app import db_cows, db_pigs, UPLOAD_FOLDER
 from ..functions import computeHash
+from ..functions import recoveryForm
 from ..functions import recoveryPreviousHash
+
 
 @inserts_bp.route('/farmPOST', methods=('GET', 'POST'))
 def farmPOST():
@@ -21,23 +23,13 @@ def farmPOST():
     '''
     
     if request.method=='POST':
-        enterprise = request.form["collections"]
-
+        enterprise, db = recoveryForm.recoveryForm()
+        
         f = request.files['csvfile']
         filename = secure_filename(f.filename)
         f.save(os.path.join(UPLOAD_FOLDER, enterprise + '.csv'))
         
         csvFilePath = r'data/' + enterprise + '.csv'
-        
-        try: # If exist this enterprise
-            count = db_cows['listCollections'].count_documents({"collection": enterprise})
-        except: # If not exist this enterprise
-            count = 0
-            
-        if count == 0:
-            if enterprise != "reference" and enterprise != "matComp":
-                key = request.form["keys"]
-                db_cows['listCollections'].insert({"collection": enterprise, "key": key})
                 
         data = []
         with open(csvFilePath, encoding='utf-8') as csvf:
@@ -45,8 +37,8 @@ def farmPOST():
             #add date from today
             date = datetime.today().strftime('%Y-%m-%d')
             dict = {'date_insert_in_db': date}
-            #hashPrevious = recoveryPreviousHash.recoveryPreviousHash(db_cows[enterprise])
-            hashPrevious = {'hash_previous': '0'} #DELETE
+            hashPrevious = recoveryPreviousHash.recoveryPreviousHash(db_cows[enterprise])
+            #hashPrevious = {'hash_previous': '0'} #DELETE
 
             for rows in csvReader:
                 key = {}
