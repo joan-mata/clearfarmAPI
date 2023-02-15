@@ -46,9 +46,9 @@ def farmPOST():
                 key.update(hashPrevious)
                 key.update(rows)
                 print("KEY")
-                print(rows.keys())
+                print(type(rows.keys()))
                 print("VALUE")
-                print(rows.values())
+                print(type(rows.values()))
                 hash = computeHash.computeHash(key)
                 hashPrevious = hash
                 key.update(hash)
