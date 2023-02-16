@@ -51,7 +51,7 @@ def farmPOST():
                 update_rows = {}
                 for tupla in zip(list(rows.keys()), list(rows.values())):
                     if tupla[1] != "":
-                        dict_aux = {tupla[0]: tupla[1]}
+                        dict_aux = {str(tupla[0]): str(tupla[1])}
                         update_rows.update(dict_aux)
 
                 key.update(update_rows)
