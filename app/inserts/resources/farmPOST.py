@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for, redirect
+cccfrom flask import Flask, render_template, request, url_for, redirect
 from pymongo import MongoClient
 from datetime import datetime
 from werkzeug.utils import secure_filename
@@ -48,7 +48,12 @@ def farmPOST():
 
 #                list_keys = list(rows.keys())
 #                list_values = list(rows.values())
-                key.update(rows)
+                update_rows = {}
+                for tupla in zip(list(rows.keys()), list(rows.values())):
+                    dict_aux = {tupla[0]: tupla[1]}
+                    update_rows.update(dict_aux)
+
+                key.update(update_rows)
 #                print("KEY")
 #                print(str(rows.keys()))
 #                print("VALUE")
