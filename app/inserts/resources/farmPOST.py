@@ -50,8 +50,9 @@ def farmPOST():
 #                list_values = list(rows.values())
                 update_rows = {}
                 for tupla in zip(list(rows.keys()), list(rows.values())):
-                    dict_aux = {tupla[0]: tupla[1]}
-                    update_rows.update(dict_aux)
+                    if tupla[1] != "":
+                        dict_aux = {tupla[0]: tupla[1]}
+                        update_rows.update(dict_aux)
 
                 key.update(update_rows)
 #                print("KEY")
