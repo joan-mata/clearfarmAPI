@@ -12,7 +12,8 @@ from app import db, UPLOAD_FOLDER
 def recoveryPreviousHash(dataBase):
     data = list(dataBase.find({}, {"hash": 1}).sort("$natural", -1))
     if data:
-        dict = {'hash_previous': str(data[0])}
+        dict_aux = data[0]
+        dict = {'hash_previous': str(dict_aux["hash"])}
     else:
         dict = {'hash_previous': '0'}
 
