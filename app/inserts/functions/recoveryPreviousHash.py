@@ -10,9 +10,12 @@ from .. import inserts_bp
 from app import db, UPLOAD_FOLDER
 
 def recoveryPreviousHash(dataBase):
-    #data = list(dataBase.find({"hash": {"$exists": "true"}}).sort("$natural", -1))
     data = list(dataBase.find({}, {"hash": 1}).sort("$natural", -1))
-    dict = {'hash_previous': str(data[0])}
+    if data:
+        dict = {'hash_previous': str(data[0])}
+    else:
+        dict = {'hash_previous': '0'}
+
     return dict
 
 
