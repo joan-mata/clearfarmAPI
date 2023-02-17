@@ -12,6 +12,6 @@ from app import db, UPLOAD_FOLDER
 
 def computeHash(key):
     hash = hashlib.sha256(str(key).encode()).digest()
-    dict = {'hash': hash}
+    dict = {'hash': str(hash)}
     return dict
 
