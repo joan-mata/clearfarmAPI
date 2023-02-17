@@ -43,7 +43,9 @@ def farmPOST():
             for rows in csvReader:
                 key = {}
                 key.update(dict)
-                hashPrevious = recoveryPreviousHash.recoveryPreviousHash(db[enterprise])
+                print("NUEVO ITEM: ")
+                print("Hash anterior" + hashPrevious)
+                #hashPrevious = recoveryPreviousHash.recoveryPreviousHash(db[enterprise])
                 key.update(hashPrevious)
 
 #                list_keys = list(rows.keys())
@@ -60,12 +62,12 @@ def farmPOST():
 #                print("VALUE")
 #                print(str(rows.values()))
                 hash = computeHash.computeHash(key)
-                #hashPrevious = hash
-                key.update(hash)
-                db_cows[enterprise].insert_one(key)
-                #data.append(key)
+                hashPrevious = hash
+                print("Hash posterior" + hashPrevious)
 
-        #db_cows[enterprise].insert_many(data)
+                data.append(key)
+
+        db_cows[enterprise].insert_many(data)
         return redirect(url_for('home.home'))
 
     return render_template('inserts/farmPOST.html')
