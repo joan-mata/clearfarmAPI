@@ -15,7 +15,7 @@ def recoveryPreviousHash(dataBase):
     
     if data:
         dict_aux = data[0]
-        dict = {'hash_previous': str(dict_aux["hash"])}
+        dict = {'hash_previous': dict_aux["hash"]}
         #dict = {'hash_previous': str(data["hash"])}
     else:
         dict = {'hash_previous': '0'}
