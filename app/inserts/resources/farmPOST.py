@@ -58,7 +58,7 @@ def farmPOST():
                     print("tupla_key type:" + type(tupla[0]))
                     print("tupla_value:" + str(tupla[1]))
                     print("tupla_value type:" + type(tupla[1]))
-                    print("..."))
+                    print("...")
 
                     if tupla[1] != "":
                         dict_aux = {str(tupla[0]): str(tupla[1])}
