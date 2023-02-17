@@ -44,7 +44,7 @@ def farmPOST():
                 key = {}
                 key.update(dict)
                 print("NUEVO ITEM: ")
-                print("Hash anterior" + hashPrevious)
+                print("Hash anterior" + str(hashPrevious))
                 #hashPrevious = recoveryPreviousHash.recoveryPreviousHash(db[enterprise])
                 key.update(hashPrevious)
 
@@ -63,7 +63,7 @@ def farmPOST():
 #                print(str(rows.values()))
                 hash = computeHash.computeHash(key)
                 hashPrevious = hash
-                print("Hash posterior" + hashPrevious)
+                print("Hash posterior" + str(hashPrevious))
 
                 data.append(key)
 
