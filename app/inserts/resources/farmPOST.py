@@ -51,7 +51,6 @@ def farmPOST():
                 print("Rows:" + str(rows))
                 print("Rows type:" + str(type(rows)))
                 print("Rows list:" + str(list((rows)))
-                print("Rows list type:" + str(type(list(rows)))
 
                 update_rows = {}
                 
