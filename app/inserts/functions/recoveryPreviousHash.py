@@ -12,8 +12,6 @@ from app import db, UPLOAD_FOLDER
 def recoveryPreviousHash(dataBase):
     data = list(dataBase.find({}, {"hash": 1}).sort("$natural", -1))
     
-    print('Data: ' + str(data) +'\n')
-
     if data:
         print('Data[0]: ' + str(data[0])+'\n')
         dict_aux = data[0]
