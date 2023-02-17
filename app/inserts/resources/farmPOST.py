@@ -38,14 +38,10 @@ def farmPOST():
             date = datetime.today().strftime('%Y-%m-%d')
             dict = {'date_insert_in_db': date}
             hashPrevious = recoveryPreviousHash.recoveryPreviousHash(db[enterprise])
-            #hashPrevious = {'hash_previous': '0'} #DELETE
 
             for rows in csvReader:
                 key = {}
                 key.update(dict)
-                print("NUEVO ITEM: ")
-                print("Hash anterior" + str(hashPrevious))
-                #hashPrevious = recoveryPreviousHash.recoveryPreviousHash(db[enterprise])
                 key.update(hashPrevious)
 
 #                list_keys = list(rows.keys())
@@ -61,10 +57,7 @@ def farmPOST():
 #                print(str(rows.keys()))
 #                print("VALUE")
 #                print(str(rows.values()))
-                hash = computeHash.computeHash(key)
-                hashPrevious = hash
-                print("Hash posterior" + str(hashPrevious))
-
+                hash, hashPrevious = computeHash.computeHash(key)
                 data.append(key)
 
         db_cows[enterprise].insert_many(data)
