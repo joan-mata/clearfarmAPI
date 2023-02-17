@@ -50,9 +50,13 @@ def farmPOST():
                 print("---- NEW ITEM ----")
                 print("Rows:" + str(rows))
                 print("Rows type:" + str(type(rows)))
-                
+                print("Rows list:" + str(list((rows)))
+                print("Rows list type:" + str(type(rows)))
 
                 update_rows = {}
+                
+                
+                
                 for tupla in zip(list(rows.keys()), list(rows.values())):
                     print("tupla_key:" + str(tupla[0]))
                     print("tupla_key type:" + str(type(tupla[0])))
