@@ -62,9 +62,10 @@ def farmPOST():
                 hash = computeHash.computeHash(key)
                 #hashPrevious = hash
                 key.update(hash)
-                data.append(key)
+                db_cows[enterprise].insert_one(key)
+                #data.append(key)
 
-        db_cows[enterprise].insert_many(data)
+        #db_cows[enterprise].insert_many(data)
         return redirect(url_for('home.home'))
 
     return render_template('inserts/farmPOST.html')
