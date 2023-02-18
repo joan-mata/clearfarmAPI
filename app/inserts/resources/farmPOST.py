@@ -48,9 +48,9 @@ def farmPOST():
                 key.update(hashPrevious)
 
 
-#                print("---- NEW ITEM ----")
-#                print("Rows:" + str(rows))
-#                print("Rows type:" + str(type(rows)))
+                print("---- NEW ITEM ----")
+                print("Rows:" + str(rows))
+                print("Rows type:" + str(type(rows)))
 #                print("Rows list:" + str(list(rows)))
 #
 #                update_rows = {}
