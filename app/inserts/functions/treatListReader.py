@@ -70,21 +70,12 @@ def treatListReader(csvf, db, enterprise):
             if tupla[1] != "":
                 dict_aux = {str(tupla[0]): str(tupla[1])}
                 update_rows.update(dict_aux)
-                
-            print("dict:" + str(dict_aux))
-            print("...")
 
         key.update(update_rows)
 
-        
-        
-#        key.update(rows)
-        
-        
-        
         hash, hashPrevious = computeHash.computeHash(key)
+        key.update(hash)
         data.append(key)
-        
         
     return data
 
