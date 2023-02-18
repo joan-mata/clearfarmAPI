@@ -52,8 +52,7 @@ def treatListReader(csvf):
 #            print("tupla_value type:" + str(type(tupla[1])))
 #            print("...")
 
-#            if tupla[1] != "":
-            if !tupla[1]:
+            if tupla[1] != "":
                 dict_aux = {str(tupla[0]): str(tupla[1])}
                 update_rows.update(dict_aux)
 
