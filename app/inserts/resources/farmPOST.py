@@ -37,7 +37,7 @@ def farmPOST():
             #csvReader = csv.DictReader(f, delimiter=';', quoting=csv.QUOTE_NONE)
 
             #csvReader = csv.reader(csvf, delimiter=';')
-            csvReader = csv.reader(csvf)
+            csvReader = csv.reader(csvf, delimiter=None)
             #csvReader = csv.reader(csvf, dialect='semicolon')
             #DictReader(csvf) #probar semicolon
             
