@@ -21,7 +21,15 @@ def treatListReader(csvf):
     print("csvReader_comma :" + str(csvReader_comma))
     print("csvReader_comma type:" + str(type(csvReader_comma)))
 
-    if csvReader_comma == False or len(csvReader_semicolon[0]) > len(csvReader_comma[0]):
+    if csvReader_comma == False:
+        csvReader = csvReader_semicolon
+        headers = csvReader_semicolon[0]
+        
+    elif csvReader_semicolon == False:
+        csvReader = csvReader_comma
+        headers = csvReader_comma[0]
+        
+    elif len(csvReader_semicolon[0]) > len(csvReader_comma[0]):
         csvReader = csvReader_semicolon
         headers = csvReader_semicolon[0]
 
