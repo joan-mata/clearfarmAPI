@@ -10,7 +10,6 @@ from .. import inserts_bp
 from app import db_cows, db_pigs, UPLOAD_FOLDER
 from ..functions import computeHash
 from ..functions import recoveryForm
-from ..functions import recoveryPreviousHash
 from ..functions import treatListReader
 
 

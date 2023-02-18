@@ -7,6 +7,7 @@ import json
 import os
 import hashlib
 
+from . import recoveryPreviousHash
 from .. import inserts_bp
 from app import db, UPLOAD_FOLDER
 
