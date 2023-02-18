@@ -16,8 +16,10 @@ def treatListReader(csvf):
     csvReader_semicolon = csv.reader(csvf, delimiter=';')
     csvReader_comma = csv.reader(csvf)
     
+    print("csvReader_semicolon :" + str(csvReader_semicolon))
     print("csvReader_semicolon type:" + str(type(csvReader_semicolon)))
-    print("csvReader_semicolon type:" + str(type(csvReader_semicolon)))
+    print("csvReader_comma :" + str(csvReader_comma))
+    print("csvReader_comma type:" + str(type(csvReader_comma)))
 
     if csvReader_semicolon[0] > csvReader_comma[0]:
         csvReader = csvReader_semicolon
