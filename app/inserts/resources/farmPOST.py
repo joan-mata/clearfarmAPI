@@ -33,8 +33,8 @@ def farmPOST():
                 
         data = []
         with open(csvFilePath, encoding='utf-8') as csvf:
-            dialect = csv.Sniffer().sniff(csvf.read(1024)) #probar
-            csvReader = csv.DictReader(csvf, dialect.delimiter(";")) #probar
+            dialect = csv.Sniffer(delimiters=";").sniff(csvf.read(1024)) #probar
+            csvReader = csv.DictReader(csvf) #probar
             #add date from today
             date = datetime.today().strftime('%Y-%m-%d')
             dict = {'date_insert_in_db': date}
