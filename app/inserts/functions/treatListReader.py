@@ -25,7 +25,7 @@ def treatListReader(csvf):
         csvReader = csvReader_semicolon
         headers = csvReader_semicolon[0]
 
-    elif:
+    else:
         csvReader = csvReader_comma
         headers = csvReader_comma[0]
     
