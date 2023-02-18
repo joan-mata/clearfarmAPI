@@ -18,10 +18,10 @@ def treatListReader(csvf, db, enterprise):
     csvReader_semicolon = list(csv.reader(csvf, delimiter=';'))
     csvReader_comma = list(csv.reader(csvf))
     
-    print("csvReader_semicolon :" + str(csvReader_semicolon))
-    print("csvReader_semicolon type:" + str(type(csvReader_semicolon)))
-    print("csvReader_comma :" + str(csvReader_comma))
-    print("csvReader_comma type:" + str(type(csvReader_comma)))
+#    print("csvReader_semicolon :" + str(csvReader_semicolon))
+#    print("csvReader_semicolon type:" + str(type(csvReader_semicolon)))
+#    print("csvReader_comma :" + str(csvReader_comma))
+#    print("csvReader_comma type:" + str(type(csvReader_comma)))
 
 #    if csvReader_comma == False:
 #        csvReader = csvReader_semicolon
@@ -70,6 +70,9 @@ def treatListReader(csvf, db, enterprise):
             if tupla[1] != "":
                 dict_aux = {str(tupla[0]): str(tupla[1])}
                 update_rows.update(dict_aux)
+                
+            print("dict:" + str(dict_aux))
+            print("...")
 
         key.update(update_rows)
 
