@@ -11,7 +11,7 @@ from . import recoveryPreviousHash
 from .. import inserts_bp
 from app import db, UPLOAD_FOLDER
 
-def treatListReader(csvf):
+def treatListReader(csvf, db, enterprise):
     data = []
 
     csvReader_semicolon = list(csv.reader(csvf, delimiter=';'))
