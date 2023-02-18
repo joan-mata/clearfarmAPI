@@ -12,10 +12,12 @@ from app import db, UPLOAD_FOLDER
 def recoveryPreviousHash(dataBase):
     data = list(dataBase.find({}, {"hash": 1}).sort("$natural", -1))
     
-    if data:
+#    if data:
+    try:
         dict_aux = data[0]
         dict = {'hash_previous': dict_aux["hash"]}
-    else:
+    except:
+#    else:
         dict = {'hash_previous': '0'}
 
     return dict
