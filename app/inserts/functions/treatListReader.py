@@ -13,8 +13,8 @@ from app import db, UPLOAD_FOLDER
 def treatListReader(csvf):
     data = []
 
-    csvReader_semicolon = csv.reader(csvf, delimiter=';')
-    csvReader_comma = csv.reader(csvf)
+    csvReader_semicolon = list(csv.reader(csvf, delimiter=';'))
+    csvReader_comma = list(csv.reader(csvf))
     
     print("csvReader_semicolon :" + str(csvReader_semicolon))
     print("csvReader_semicolon type:" + str(type(csvReader_semicolon)))
