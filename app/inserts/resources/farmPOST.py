@@ -34,11 +34,16 @@ def farmPOST():
         data = []
         with open(csvFilePath, encoding='utf-8') as csvf:
             #dialect = csv.Sniffer(delimiters=";").sniff(csvf.read(1024)) #probar
-            csvReader = csv.DictReader(f, delimiter=';', quoting=csv.QUOTE_NONE)
+            #csvReader = csv.DictReader(f, delimiter=';', quoting=csv.QUOTE_NONE)
 
             #csvReader = csv.reader(csvf, delimiter=';')
+            csvReader = csv.reader(csvf)
             #csvReader = csv.reader(csvf, dialect='semicolon')
             #DictReader(csvf) #probar semicolon
+            
+            
+            
+            
             #add date from today
             date = datetime.today().strftime('%Y-%m-%d')
             dict = {'date_insert_in_db': date}
