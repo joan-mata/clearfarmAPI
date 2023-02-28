@@ -7,7 +7,6 @@ import json
 import os
 
 from .. import inserts_bp
-from app import db_cows, db_pigs, UPLOAD_FOLDER
 from ..functions import recoveryForm
 from ..functions import treatListReader
 
@@ -33,10 +32,8 @@ def farmPOST():
         with open(csvFilePath, encoding='utf-8') as csvf:
             data = treatListReader.treatListReader(csvf, db, enterprise)
 
-        print(str(type(data)))
         db[enterprise].insert_many(data)
 #        return redirect(url_for('home.home'))
-        return "ok"
 
     return render_template('inserts/farmPOST.html')
 
