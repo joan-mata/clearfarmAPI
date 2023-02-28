@@ -54,7 +54,7 @@ def farmPOST():
         if count == 0:
             if enterprise != "reference" and enterprise != "matComp":
                 key = request.form["keys"]
-                db_cows['listCollections'].insert({"collection": enterprise, "key": key})
+                db_cows['listCollections'].insert_one({"collection": enterprise, "key": key})
                 
         data = []
         with open(csvFilePath, encoding='utf-8') as csvf:
