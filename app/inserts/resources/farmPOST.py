@@ -76,5 +76,5 @@ def farmPOST():
         db[enterprise].insert_many(data)
         return redirect(url_for('home.home'))
 
-return render_template('inserts/farmPOST.html')
+    return render_template('inserts/farmPOST.html')
 
