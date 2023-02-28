@@ -42,7 +42,7 @@ def treatListReader(csvf, db, enterprise):
     #add date from today
     date = datetime.today().strftime('%Y-%m-%d')
     dict = {'date_insert_in_db': date}
-    hashPrevious = recoveryPreviousHash.recoveryPreviousHash(db[enterprise])
+    hashPrevious = {'hash_previous': '0'} #recoveryPreviousHash.recoveryPreviousHash(db[enterprise])
     
     for i in range(1, len(csvReader)):
     #for rows in csvReader:

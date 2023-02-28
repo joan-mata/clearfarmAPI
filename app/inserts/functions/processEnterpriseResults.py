@@ -11,10 +11,8 @@ from .. import inserts_bp
 def processEnterpriseResults(db, enterprise, key):
     try: # If exist this enterprise
         db['listCollections'].count_documents({"collection": enterprise})
-        print("Hello, Collection Exist!")
     except: # If not exist this enterprise
         if enterprise != "reference" and enterprise != "matComp":
             db['listCollections'].insert({"collection": enterprise, "key": key})
-            print("Hello, Collection NOT Exist!")
 
     
