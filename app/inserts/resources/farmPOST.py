@@ -73,7 +73,7 @@ def farmPOST():
                 key.update(hash)
                 data.append(key)
                 
-        db_cows[enterprise].insert_many(data)
+        db_cows[enterprise].insert(data)
         return redirect(url_for('home.home'))
 
     return render_template('inserts/farmPOST.html')
