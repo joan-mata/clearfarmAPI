@@ -7,11 +7,12 @@ import json
 import os
 import hashlib
 
+from . import computeHash
 from . import recoveryPreviousHash
 from .. import inserts_bp
-from app import db, UPLOAD_FOLDER
+from app import UPLOAD_FOLDER
 
-def treatDictReader(csvf):
+def treatDictReader(csvf, db, enterprise):
     data = []
 
     csvReader = csv.DictReader(csvf)
@@ -24,7 +25,7 @@ def treatDictReader(csvf):
     for rows in csvReader:
         key = {}
         key.update(dict)
-        key.update(hashPrevious)        
+        key.update(hashPrevious)
         key.update(rows)
         hash, hashPrevious = computeHash.computeHash(key)
         key.update(hash)
