@@ -35,7 +35,8 @@ def farmPOST():
 
         print(str(type(data)))
         db[enterprise].insert_many(data)
-        return redirect(url_for('home.home'))
+#        return redirect(url_for('home.home'))
+        return "ok"
 
     return render_template('inserts/farmPOST.html')
 
