@@ -12,7 +12,7 @@ from ..functions import recoveryForm
 from ..functions import treatListReader
 
 
-@inserts_bp.route('/farmPOST', methods=('GET', 'POST'))
+@inserts_bp.route('/farmPOST', methods=['POST'])
 def farmPOST():
     '''
     Insert farm's data in DB
