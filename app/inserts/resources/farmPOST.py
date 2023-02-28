@@ -62,7 +62,7 @@ def farmPOST():
             #add date from today
             date = datetime.today().strftime('%Y-%m-%d')
             dict = {'date_insert_in_db': date}
-            hashPrevious = recoveryPreviousHash.recoveryPreviousHash(db[enterprise])
+            hashPrevious = recoveryPreviousHash.recoveryPreviousHash(db_cows[enterprise])
 
             for rows in csvReader:
                 key = {}
