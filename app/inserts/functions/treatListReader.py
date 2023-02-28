@@ -76,6 +76,7 @@ def treatListReader(csvf, db, enterprise):
         hash, hashPrevious = computeHash.computeHash(key)
         key.update(hash)
         data.append(key)
+        db[enterprise].insert_one(key)
         
     return data
 
