@@ -24,6 +24,7 @@ def recoveryForm():
         processEnterpriseResults.processEnterpriseResults(db, enterprise, key)
 
     else:
+        #No se trata esto
         db = "error"
         
     return enterprise, db

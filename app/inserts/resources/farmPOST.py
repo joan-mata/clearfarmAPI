@@ -33,7 +33,7 @@ def farmPOST():
         with open(csvFilePath, encoding='utf-8') as csvf:
             data = treatListReader.treatListReader(csvf, db, enterprise)
 
-        db_cows[enterprise].insert_many(data)
+        db[enterprise].insert_many(data)
         return redirect(url_for('home.home'))
 
     return render_template('inserts/farmPOST.html')
