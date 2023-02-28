@@ -7,6 +7,7 @@ import json
 import os
 
 from .. import inserts_bp
+from app import UPLOAD_FOLDER
 from ..functions import recoveryForm
 from ..functions import treatListReader
 
