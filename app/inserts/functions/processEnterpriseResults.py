@@ -15,4 +15,6 @@ def processEnterpriseResults(db, enterprise, key):
     except: # If not exist this enterprise
         if enterprise != "reference" and enterprise != "matComp":
             db['listCollections'].insert({"collection": enterprise, "key": key})
+            print("Hello, Collection NOT Exist!")
+
     
