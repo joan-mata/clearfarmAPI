@@ -20,7 +20,7 @@ def farmPOST():
         None
     '''
     
-#    if request.method=='POST':
+    if request.method=='POST':
 #        enterprise, db = recoveryForm.recoveryForm()
 #
 #        f = request.files['csvfile']
@@ -38,13 +38,13 @@ def farmPOST():
 
         enterprise = request.form["collections"]
         db = db_cows
-        
+
         f = request.files['csvfile']
         filename = secure_filename(f.filename)
         f.save(os.path.join(UPLOAD_FOLDER, enterprise + '.csv'))
-        
+
         csvFilePath = r'data/' + enterprise + '.csv'
-        
+
         try: # If exist this enterprise
             count = db['listCollections'].count_documents({"collection": enterprise})
         except: # If not exist this enterprise
@@ -75,6 +75,6 @@ def farmPOST():
                 
         db[enterprise].insert_many(data)
         return redirect(url_for('home.home'))
-        
+
 return render_template('inserts/farmPOST.html')
 
