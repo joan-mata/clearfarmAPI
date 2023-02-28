@@ -7,10 +7,9 @@ import json
 import os
 
 from .. import inserts_bp
-from app import UPLOAD_FOLDER
 from ..functions import recoveryForm
 from ..functions import treatDictReader
-
+from app import db_cows, UPLOAD_FOLDER
 
 @inserts_bp.route('/farmPOST', methods=['GET', 'POST'])
 def farmPOST():
@@ -21,22 +20,61 @@ def farmPOST():
         None
     '''
     
-    if request.method=='POST':
-        enterprise, db = recoveryForm.recoveryForm()
+#    if request.method=='POST':
+#        enterprise, db = recoveryForm.recoveryForm()
+#
+#        f = request.files['csvfile']
+#        filename = secure_filename(f.filename)
+#        f.save(os.path.join(UPLOAD_FOLDER, enterprise + '.csv'))
+#
+#        csvFilePath = r'data/' + enterprise + '.csv'
+#
+#        with open(csvFilePath, encoding='utf-8') as csvf:
+#            data = treatDictReader.treatDictReader(csvf, db, enterprise)
+##            data = treatListReader.treatListReader(csvf, db, enterprise)
+#
+#        db[enterprise].insert_many(data)
+#        return redirect(url_for('home.home'))
+
+        enterprise = request.form["collections"]
+        db = db_cows
         
         f = request.files['csvfile']
         filename = secure_filename(f.filename)
         f.save(os.path.join(UPLOAD_FOLDER, enterprise + '.csv'))
         
         csvFilePath = r'data/' + enterprise + '.csv'
+        
+        try: # If exist this enterprise
+            count = db['listCollections'].count_documents({"collection": enterprise})
+        except: # If not exist this enterprise
+            count = 0
+            
+        if count == 0:
+            if enterprise != "reference" and enterprise != "matComp":
+                key = request.form["keys"]
+                db['listCollections'].insert({"collection": enterprise, "key": key})
                 
+        data = []
         with open(csvFilePath, encoding='utf-8') as csvf:
-            data = treatDictReader.treatDictReader(csvf, db, enterprise)
-#            data = treatListReader.treatListReader(csvf, db, enterprise)
+            csvReader = csv.DictReader(csvf)
+            #add date from today
+            date = datetime.today().strftime('%Y-%m-%d')
+            dict = {'date_insert_in_db': date}
+            #hashPrevious = recoveryPreviousHash.recoveryPreviousHash(db[enterprise])
+            hashPrevious = {'hash_previous': '0'} #DELETE
 
+            for rows in csvReader:
+                key = {}
+                key.update(dict)
+                key.update(hashPrevious)
+                key.update(rows)
+                hash, hashPrevious = computeHash.computeHash(key)
+                key.update(hash)
+                data.append(key)
+                
         db[enterprise].insert_many(data)
         return redirect(url_for('home.home'))
-
-
-    return render_template('inserts/farmPOST.html')
+        
+return render_template('inserts/farmPOST.html')
 
