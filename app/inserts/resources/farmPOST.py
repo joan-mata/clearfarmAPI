@@ -9,7 +9,7 @@ import os
 from .. import inserts_bp
 from app import UPLOAD_FOLDER
 from ..functions import recoveryForm
-from ..functions import treatListReader
+from ..functions import treatDictReader
 
 
 @inserts_bp.route('/farmPOST', methods=['GET', 'POST'])
@@ -31,12 +31,12 @@ def farmPOST():
         csvFilePath = r'data/' + enterprise + '.csv'
                 
         with open(csvFilePath, encoding='utf-8') as csvf:
-            data = treatListReader.treatListReader(csvf, db, enterprise)
+            data = treatDictReader.treatDictReader(csvf, db, enterprise)
+#            data = treatListReader.treatListReader(csvf, db, enterprise)
 
-#        db[enterprise].insert_many(data)
-#        return redirect(url_for('home.home'))
-#        print(str(data))
-        return "ok"
+        db[enterprise].insert_many(data)
+        return redirect(url_for('home.home'))
+
 
     return render_template('inserts/farmPOST.html')
 
