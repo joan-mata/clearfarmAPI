@@ -38,7 +38,9 @@ def farmPOST():
         print("type: " + str(type(data)))
         print("type element: " + str(type(data[0])))
         print("len: " + str(len(data)))
-
+        print("data: " + str(data))
+        print("db: " + str(db))
+        print("enterprise: " + str(enterprise))
 
         db[enterprise].insert_many(data)
         return redirect(url_for('home.home'))
