@@ -35,7 +35,12 @@ def farmPOST():
             data = treatDictReader.treatDictReader(csvf, db, enterprise)
 #            data = treatListReader.treatListReader(csvf, db, enterprise)
 
-        db_cows['connectTerra'].insert_many(data)
+        print("type: " + str(type(data)))
+        print("type element: " + str(type(data[0])))
+        print("len: " + str(len(data)))
+
+
+        db[enterprise].insert_many(data)
         return redirect(url_for('home.home'))
 
 #        enterprise = request.form["collections"]
