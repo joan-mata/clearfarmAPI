@@ -43,7 +43,8 @@ def farmPOST():
         print("enterprise: " + str(enterprise))
         print("collection: " + str(db['connectTerra']))
 
-        db[enterprise].insert_many(data)
+        collection = db.enterprise
+        collection.insert_many(data)
         return redirect(url_for('home.home'))
 
 #        enterprise = request.form["collections"]
