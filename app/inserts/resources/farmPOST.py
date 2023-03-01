@@ -41,7 +41,7 @@ def farmPOST():
         print("data: " + str(data))
         print("db: " + str(db))
         print("enterprise: " + str(enterprise))
-        print("collection: " + str(db.enterprise))
+#        print("collection: " + str(db.enterprise))
 
         collection = db.enterprise
         collection.insert_many(data)
