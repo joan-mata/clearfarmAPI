@@ -41,9 +41,11 @@ def farmPOST():
         print("data: " + str(data))
         print("db: " + str(db))
         print("enterprise: " + str(enterprise))
-#        print("collection: " + str(db.enterprise))
-
+        
         collection = db.enterprise
+                
+        print("collection: " + str(collection))
+
         collection.insert_many(data)
         return redirect(url_for('home.home'))
 
