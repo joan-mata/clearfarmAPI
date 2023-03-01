@@ -42,7 +42,8 @@ def farmPOST():
         print("db: " + str(db))
         print("enterprise: " + str(enterprise))
         
-        collection = db.enterprise
+#        collection = db.enterprise
+        collection = db[enterprise]
                 
         print("collection: " + str(collection))
 
