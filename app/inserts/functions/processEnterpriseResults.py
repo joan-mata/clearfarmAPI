@@ -13,6 +13,6 @@ def processEnterpriseResults(db, enterprise, key):
         db['listCollections'].count_documents({"collection": enterprise})
     except: # If not exist this enterprise
         if enterprise != "reference" and enterprise != "matComp":
-            db['listCollections'].insert({"collection": enterprise, "key": key})
+            db['listCollections'].insert_one({"collection": enterprise, "key": key})
 
     

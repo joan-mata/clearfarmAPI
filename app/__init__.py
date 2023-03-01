@@ -3,8 +3,6 @@ from pymongo import MongoClient
 
 client = MongoClient('localhost', 27017)
 #db_users = client.users
-#TODO: BORRAR!
-db = "null"
 
 db_cows = client["tests"]
 #db_pigs = client["cows"] #real cows
