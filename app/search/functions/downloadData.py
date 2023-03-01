@@ -6,7 +6,6 @@ import json
 import pandas as pd
 
 from .. import search_bp
-from app import db
 
 def downloadData(data):
     csvFilePath = 'app/downloads/csv/dataDownload.csv'

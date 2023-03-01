@@ -6,7 +6,6 @@ import json
 import pandas as pd
 
 from .. import search_bp
-from app import db
 
 #Compare Date functions
 def compareDateFrom(date, temporal):

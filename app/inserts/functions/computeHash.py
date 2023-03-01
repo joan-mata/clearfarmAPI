@@ -8,7 +8,7 @@ import os
 import hashlib
 
 from .. import inserts_bp
-from app import db, UPLOAD_FOLDER
+from app import UPLOAD_FOLDER
 
 def computeHash(key):
     hash = hashlib.sha256(str(key).encode()).digest()

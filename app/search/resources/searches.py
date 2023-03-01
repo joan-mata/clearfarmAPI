@@ -6,7 +6,6 @@ import json
 import pandas as pd
 
 from .. import search_bp
-from app import db
 
 @search_bp.route('/searches', methods=('GET', 'POST'))
 def searches():
