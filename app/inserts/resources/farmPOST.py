@@ -9,6 +9,7 @@ import os
 from .. import inserts_bp
 from ..functions import recoveryForm
 from ..functions import treatDictReader
+from ..functions import treatListReader
 from ..functions import computeHash
 from ..functions import recoveryPreviousHash
 from app import db_cows, UPLOAD_FOLDER
@@ -32,8 +33,8 @@ def farmPOST():
         csvFilePath = r'data/' + enterprise + '.csv'
 
         with open(csvFilePath, encoding='utf-8') as csvf:
-            data = treatDictReader.treatDictReader(csvf, db, enterprise)
-#            data = treatListReader.treatListReader(csvf, db, enterprise)
+#            data = treatDictReader.treatDictReader(csvf, db, enterprise)
+            data = treatListReader.treatListReader(csvf, db, enterprise)
 
         print("type: " + str(type(data)))
         print("type element: " + str(type(data[0])))
@@ -42,7 +43,6 @@ def farmPOST():
         print("db: " + str(db))
         print("enterprise: " + str(enterprise))
         
-#        collection = db.enterprise
         collection = db[enterprise]
                 
         print("collection: " + str(collection))
