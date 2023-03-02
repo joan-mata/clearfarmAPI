@@ -4,8 +4,8 @@ from pymongo import MongoClient
 client = MongoClient('localhost', 27017)
 #db_users = client.users
 
-db_cows = client["tests"]
-#db_pigs = client["cows"] #real cows
+#db_cows = client["tests"]
+db_pigs = client["cows"] #real cows
 db_pigs = client["pigs"] #real pigs
 db_users = client["users"] #real users
 
