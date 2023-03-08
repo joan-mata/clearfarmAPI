@@ -43,7 +43,6 @@ def searchCowData():
                 if quantity == "Last":
                     stringHtml, data = searchLastFarm.searchLastFarm(farmID)
                 elif quantity == "All":
-                    print("HOLA")
                     stringHtml, data = searchLastFarm.searchLastFarm(farmID)
                 else:
                     stringHtml, data = searchRangeFarm.searchRangeFarm(farmID, timeFrom, timeTo)
