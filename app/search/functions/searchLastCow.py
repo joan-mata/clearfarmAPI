@@ -6,6 +6,7 @@ import json
 import pandas as pd
 
 from .. import search_bp
+from app import db_cows
 
 def searchLastCow(farmID, cowNum, id):
     '''
@@ -16,7 +17,7 @@ def searchLastCow(farmID, cowNum, id):
     '''
     
     #find id's in reference collection
-    referenceIds = list(db["reference"].find({"$and":[{"farmID": farmID},{id: cowNum}]}).sort("$natural", -1))
+    referenceIds = list(db_cows["reference"].find({"$and":[{"farmID": farmID},{id: cowNum}]}).sort("$natural", -1))
             
     if referenceIds:
         referenceIds = referenceIds[0]
@@ -24,7 +25,7 @@ def searchLastCow(farmID, cowNum, id):
         return 'prints/printErrorReference.html', "No information about the cow in this farm"
         
     #recovery collections - id matrix (list of dictionarys)
-    matrix = list(db["listCollections"].find({"collection": {"$exists": "true"}}))
+    matrix = list(db_cows["listCollections"].find({"collection": {"$exists": "true"}}))
 
     data = []
     for item in matrix: #each item is a dictionary
@@ -36,7 +37,7 @@ def searchLastCow(farmID, cowNum, id):
         referenceFarmId = referenceIds["farmID"]
         referenceCowNum = referenceIds[itemId]
         
-        temporalData = list(db[itemCollection].find({"$and":[{"farmID": referenceFarmId},{itemId: referenceCowNum}]}).sort("$natural", -1))
+        temporalData = list(db_cows[itemCollection].find({"$and":[{"farmID": referenceFarmId},{itemId: referenceCowNum}]}).sort("$natural", -1))
         if temporalData:
             data.append(temporalData[0])
         

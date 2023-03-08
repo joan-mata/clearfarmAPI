@@ -7,6 +7,7 @@ import pandas as pd
 
 from .. import search_bp
 from . import compareDate
+from app import db_cows
 
 def searchRangeCow(farmID, cowNum, id, timeFrom, timeTo):
     '''
@@ -33,7 +34,7 @@ def searchRangeCow(farmID, cowNum, id, timeFrom, timeTo):
         dateTo = ""
     
     #find id's in reference collection
-    referenceIds = list(db["reference"].find({"$and":[{"farmID": farmID},{id: cowNum}]}).sort("$natural", -1))
+    referenceIds = list(db_cows["reference"].find({"$and":[{"farmID": farmID},{id: cowNum}]}).sort("$natural", -1))
             
     if referenceIds:
         referenceIds = referenceIds[0]
@@ -41,7 +42,7 @@ def searchRangeCow(farmID, cowNum, id, timeFrom, timeTo):
         return 'prints/printErrorReference.html', "No information about the cow in this farm"
         
     #recovery collections - id matrix (list of dictionarys)
-    matrix = list(db["listCollections"].find({"collection": {"$exists": "true"}}))
+    matrix = list(db_cows["listCollections"].find({"collection": {"$exists": "true"}}))
 
     data = []
     for item in matrix: #each item is a dictionary
@@ -53,7 +54,7 @@ def searchRangeCow(farmID, cowNum, id, timeFrom, timeTo):
         referenceFarmId = referenceIds["farmID"]
         referenceCowNum = referenceIds[itemId]
         
-        temporalData = list(db[itemCollection].find({"$and":[{"farmID": referenceFarmId},{itemId: referenceCowNum}]}).sort("$natural", -1))
+        temporalData = list(db_cows[itemCollection].find({"$and":[{"farmID": referenceFarmId},{itemId: referenceCowNum}]}).sort("$natural", -1))
         
         for temporalItem in temporalData:
             flag = compareDate.compareDate(dateFrom, dateTo, temporalItem['date_insert_in_db'])

@@ -7,6 +7,7 @@ import pandas as pd
 
 from .. import search_bp
 from . import compareDate
+from app import db_cows
 
 def searchRangeFarm(farmID, timeFrom, timeTo):
     '''
@@ -18,6 +19,7 @@ def searchRangeFarm(farmID, timeFrom, timeTo):
     #treat dates
         #Format time: YYYY-MM-DD (String)
         #Format date: [YYYY, MM, DD] (List of Int)
+    dateFrom = []
     dateFrom = []
     dateFrom.append(int(timeFrom[:4]))
     dateFrom.append(int(timeFrom[5:7]))
@@ -32,14 +34,14 @@ def searchRangeFarm(farmID, timeFrom, timeTo):
         dateTo = ""
     
     #recovery collections - id matrix (list of dictionarys)
-    matrix = list(db["listCollections"].find({"collection": {"$exists": "true"}}))
+    matrix = list(db_cows["listCollections"].find({"collection": {"$exists": "true"}}))
 
     data = []
     for item in matrix: #each item is a dictionary
         #item values
         itemCollection = item["collection"]
         
-        temporalData = list(db[itemCollection].find({"farmID": farmID}).sort("$natural", -1))
+        temporalData = list(db_cows[itemCollection].find({"farmID": farmID}).sort("$natural", -1))
         
         for temporalItem in temporalData:
             flag = compareDate.compareDate(dateFrom, dateTo, temporalItem['date_insert_in_db'])
