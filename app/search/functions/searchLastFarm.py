@@ -25,6 +25,7 @@ def searchLastFarm(farmID):
         itemCollection = item["collection"]
 
         temporalData = list(db_cows[itemCollection].find({"farmID": farmID}).sort("$natural", -1))
+        print(temporalData)
         if temporalData:
             data.append(temporalData[0])
     
