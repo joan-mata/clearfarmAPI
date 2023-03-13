@@ -36,16 +36,16 @@ def farmPOST():
 #            data = treatDictReader.treatDictReader(csvf, db, enterprise)
             data = treatListReader.treatListReader(csvf, db, enterprise)
 
-        print("type: " + str(type(data)))
-        print("type element: " + str(type(data[0])))
-        print("len: " + str(len(data)))
-        print("data: " + str(data))
-        print("db: " + str(db))
-        print("enterprise: " + str(enterprise))
-        
-        collection = db[enterprise]
-                
-        print("collection: " + str(collection))
+#        print("type: " + str(type(data)))
+#        print("type element: " + str(type(data[0])))
+#        print("len: " + str(len(data)))
+#        print("data: " + str(data))
+#        print("db: " + str(db))
+#        print("enterprise: " + str(enterprise))
+#
+#        collection = db[enterprise]
+#
+#        print("collection: " + str(collection))
 
         collection.insert_many(data)
         return redirect(url_for('home.home'))
